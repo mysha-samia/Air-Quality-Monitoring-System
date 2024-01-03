@@ -1,0 +1,384 @@
+<style>
+    :root {
+        --color: rgb(0, 0, 0);
+        --background-color: rgb(255, 255, 255);
+        --input-color: rgb(240, 240, 240);
+        --button-font-color: white;
+        --button-color: rgba(31, 31, 31, 0.884);
+        --button-hover: rgba(85, 85, 85, 0.829);
+    }
+
+    .switch-content-card {
+
+       /* background-color: var(--background-color);*/
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .switch-content-card .button-holder {
+        width: 100%;
+        display: flex;
+    }
+
+
+    .switch-content-card .formbox {
+        min-height: 90vh;
+        width: 100%;
+        color: var(--color);
+        margin: 0 auto;
+        margin-top: 2rem;
+        box-sizing: border-box;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .switch-content-card h1 {
+        text-align: center;
+    }
+
+    .switch-content-card .form-flex-container {
+        flex: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+
+    .switch-content-card .flex-item {
+        flex: 50%;
+    }
+
+    .switch-content-card .flex-view-block {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .switch-content-card .flex-view-inline {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+
+    .switch-content-card .myform-label {
+        font-size: 1.5rem;
+    }
+
+
+    .switch-content-card .myform-input {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 1rem;
+        height: 2.2rem;
+        border: none;
+        background-color: var(--input-color);
+        padding: 0 0.5rem;
+        border-radius: 5px;
+        color: black;
+        box-shadow: 1px 1px 6px rgb(240, 240, 240);
+        outline-style: outset;
+        outline-color: rgb(75, 75, 75);
+    }
+
+    .switch-content-card input[type = radio]{
+        box-shadow: none;
+        outline-style: none;
+        outline-color: none;
+    }
+
+
+    .switch-content-card .button-box {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .switch-content-card .block-button-custom {
+        width: 100%;
+        border: none;
+        background-color: var(--button-color);
+        color: var(--button-font-color);
+        padding: .7rem 1rem;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .switch-content-card .block-button-custom:hover {
+        background-color: var(--button-hover);
+        color: white;
+    }
+
+    .switch-content-card .flex-fullspan {
+        flex: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* <><><><><><><><><><><> */
+    
+
+    @media only screen and (max-width: 650px){
+
+        .switch-content-card .flex-item{
+            flex: 100%;
+        }
+        .switch-content-card .button-box{
+            width: 100%;
+        }          
+    }
+    
+    @media only screen and (min-width: 280px) and (max-width: 400px){
+        .switch-content-card .myform-label{
+            font-size: 1.2rem;
+        }
+        
+        .switch-content-card .myform-input{
+            /*width: 100%;*/
+            font-size: 1rem;
+            height: 2.3rem;
+            padding: 0.3rem 0.6rem;
+        }
+    }
+
+    @media only screen and (min-width: 50px) and (max-width: 279px){
+        .switch-content-card .myform-label{
+            font-size: 0.8rem;
+        }
+        
+        .switch-content-card .myform-input{
+            font-size: 1.3rem;
+            height: 1.6rem;
+            padding: 0.2rem 0.4rem;
+        }
+
+        .switch-content-card .flex-view-block {
+            padding: 0.5rem;
+            gap: 0.2rem;
+        }
+
+        .switch-content-card .myform-label {
+            margin-bottom: 0.3rem;
+        }
+
+        .switch-content-card .myform-label {
+            margin-bottom: 0.3rem;
+        }
+    }
+
+</style>
+
+
+<div class="card-wrapper">
+
+    <div class="switch-content-card bg-white dark:bg-dark-second rounded-lg">
+        <div class="button-holder">
+            <div class="flex-item">
+                <button id="loginButton" type="submit" class="myform-label block-button-custom">Login</button>
+            </div>
+            <div class="flex-item">
+                <button id="signupButton" type="submit" class="myform-label block-button-custom">Signup</button>
+            </div>
+        </div>
+
+
+        <div class="loginform pt-4">
+            <h1 class="font-bold text-3xl dark:text-dark-txt">Login</h1>
+            <form class="form-flex-container dark:text-dark-txt" method="post" action="userpage">
+                <div class="flex-fullspan">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Email</label>
+                        <input type="email" class="myform-input" name="loginemail" required>
+                    </div>
+                </div>
+
+                <div class="flex-fullspan">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Password</label>
+                        <input type="password" class="myform-input" name="loginpassword" required>
+                    </div>
+                </div>
+
+                <div class="flex-fullspan">
+                    <div class="flex-view-block">
+                        <div class="button-box">
+                            <button type="submit" class="myform-label block-button-custom">Login</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <!--  -->
+
+        <div class="formbox">
+
+            <h1 class="font-bold text-3xl dark:text-dark-txt">Sign Up</h1>
+            <form class="form-flex-container dark:text-dark-txt" method="post" action="signin">
+
+                <!--  -->
+                <div class="flex-fullspan">
+                    <div class="flex-view-block">
+                        <label class="myform-label">User Type</label>
+                        <select class="myform-input" name="usertype" required>
+                            <% for(let i in locals.userType){ %>
+                                <option>
+                                    <%= userType[i] %>
+                                </option>
+                                <% } %>
+                        </select>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">First Name</label>
+                        <input type="text" class="myform-input" name="fname" required>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Last Name</label>
+                        <input type="text" class="myform-input" name="lname" required>
+                    </div>
+                </div>
+
+
+                <!--  -->
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Email</label>
+                        <input type="email" class="myform-input" name="email" required>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Contact Number</label>
+                        <input type="text" class="myform-input" name="contactNo" required>
+                    </div>
+                </div>
+
+
+                <!--  -->
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Date Of Birth</label>
+                        <input type="date" class="myform-input" name="dob" required>
+                    </div>
+                </div>
+
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Gender</label>
+                        <div class="flex-view-inline">
+                            <input class="myform-input" type="radio" name="gender" value="male" required><span
+                                style="margin-right: .1rem;"></span>
+                            <label class="myform-label">Male</label><span style="margin-right: 1rem;"></span>
+                            <input class="myform-input" type="radio" name="gender" value="female" required><span
+                                style="margin-right: .1rem;"></span>
+                            <label class="myform-label">Female</label>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!--  -->
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Address</label>
+                        <input type="text" class="myform-input" name="address" required>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">City</label>
+                        <select class="myform-input" name="city" required>
+                            <% for(let i in locals.cities){ %>
+                                <option>
+                                    <%= cities[i] %>
+                                </option>
+                                <% } %>
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Zip</label>
+                        <input type="text" class="myform-input" name="zip" required>
+                    </div>
+                </div>
+
+                <!--  -->
+                <div class="flex-item">
+                    <div class="flex-view-block">
+                        <label class="myform-label">Password</label>
+                        <input type="password" class="myform-input" name="password" required>
+                    </div>
+                </div>
+
+
+
+                <div class="flex-fullspan">
+                    <div class="flex-view-block">
+                        <div class="button-box">
+                            <button type="submit" class="myform-label block-button-custom">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+
+        </div>
+        <!--  -->
+
+    </div>
+</div>
+
+<% if(typeof locals.notification != "undefined"){ %>
+    <% if(notification.status == true){ %>
+        <div class="callout">
+            <div class="callout-header"><%= notification.header %></div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+            <div class="callout-container">
+              <p><%= notification.text %></p>
+            </div>
+            <div class="callout-close"><strong>Click To Close</strong></div>
+          </div>
+    <% } %> 
+<% } %> 
+
+
+<script>
+    $(".loginform").show()
+    $(".formbox").hide()
+
+    $("#loginButton").click(500, function () {
+        $(".loginform").show()
+        $(".formbox").hide()
+    })
+
+    $("#signupButton").click(500, function () {
+        $(".formbox").show()
+        $(".loginform").hide()
+    })
+
+    $(".callout").click(function(){
+        $(this).hide()
+    })
+</script>

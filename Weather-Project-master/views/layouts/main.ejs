@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/mycard.css">
+
+  <!-- JQUERY CDN NEW -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Weather Analytics</title>
+</head>
+
+<body class="bg-gray-100 dark:bg-dark-main">
+  <%- include('../components/navbar.ejs') -%> 
+  <main class="dark:text-dark-txt flex">
+    <main-left>
+      <%- include('../components/sideCard.ejs') -%> 
+    </main-left>
+
+    <main-center>
+      <%- body -%>
+    </main-center>
+
+    <main-right class="mr-4">
+      <%- include('../components/sideCard_right.ejs') -%> 
+    </main-right>
+  </main>
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  <script src="js/jsScript.js" defer=""></script>
+  <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+</body>
+
+</html>

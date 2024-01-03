@@ -1,0 +1,71 @@
+<%- include('./components/weatherwidgetio.ejs') -%> 
+
+<div class="card-wrapper">
+    <div class="master-box shadow bg-white dark:bg-dark-second rounded-lg">
+        <div class="">
+            <form class="formbox" method="post">                               
+                <div class="form-item">
+                    <div class="form-view-block">
+                        <label class="myform-label">Search Division</label>
+                        <input type="text" class="myform-input" name="search" required>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-view-block">
+                        <div class="button-box">
+                            <input type="submit" class="myform-label block-button-custom" value="Search">
+                        </div>                                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div class="my-4">
+    <% if(typeof locals.aqiCard != "undefined"){ %>
+        <div class="aqi-card bg-white dark:bg-dark-second dark:text-dark-txt shadow">
+            <div class="aqi-flexbox">
+                <h1> <strong>Air Quality in <%= aqiCard[0].Division %></strong></h1>
+                <p>Air Quality index AQI and PM <%= aqiCard[0].PM25 %> air pollution in <%= aqiCard[0].Division %></p>
+            </div>   
+
+            <div class="aqiColor aqi-flexbox mx-3 shadow rounded aqicolor" style="background-color: <%= color %>;">
+                <div class="aqi-index shadow">
+                    <h4><strong>US AQI </strong><span class="aqiIndex"><%= aqiCard[0].PM25 %> </span></h4>                
+                </div>
+                <div class="mt-4">
+                    <h1 class="aqiLevel shadow"> <%= level %> </h1>
+                </div>
+            </div>
+                
+            <div class="aqi-flexbox">
+                <h3>Overview</h3>
+                <h2>What is the current air quality in <span><%= aqiCard[0].Division %></span>?</h2>
+                <h2>Lastest Date:<%= aqiCard[0].time %></h2>
+            </div>
+            <div class="aqi-flexbox text-black">
+                <table>
+                    <thead>
+                        <tr scope="row" class="px-2">
+                            <th><p>Air Quality Level</p></th>
+                            <th><p>Air Quality Index</p></th>
+                            <th><p>Main pollutant</p></th>
+                            <th><p>Average Temp</p></th>
+                            <th><p>Season</p></th>
+                        </tr>
+                    </thead>
+                    
+                    <tr scope="row" class="px-2">
+                        <td><p><%= level %></p></td>
+                        <td><p><%= aqiCard[0].PM25 %></p></td>
+                        <td><p><%= aqiCard[0].PM25 %></p></td>
+                        <td><p><%= aqiCard[0].Average_Temperature %></p></td>
+                        <td><p><%= aqiCard[0].Season %></p></td>
+                    </tr>
+                </table>
+            </div>        
+        </div>
+    <% } %> 
+</div>
+
+</div>

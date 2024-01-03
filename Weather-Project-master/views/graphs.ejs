@@ -1,0 +1,24 @@
+<%- include('./components/sideBaar_visibility.ejs') -%>
+<style>
+.graph {
+  height: auto;
+}
+</style>
+<%- include('./components/scroller.ejs') -%>
+<div class="card-wrapper">
+<div class="shadow bg-white dark:bg-dark-second rounded w-full"> 
+  <div id='onchange' style="padding-left: 10px;" class="bg-white dark:bg-dark-second">
+    <a class="bg-white dark:bg-dark-second">Time:</a>
+    <select id="list" style="padding: 10px; padding-left: 0px;" onchange="getSelectValue();" class="bg-white dark:bg-dark-second rounded">
+      <option value="DAY">Day</option>
+      <option value="MONTH">Month</option>
+      <option value="YEAR">Year</option>
+    </select>
+  </div>
+</div>
+
+</div>
+<div class="card-wrapper">
+  <div id='bar1' class="shadow graph"><!-- Plotly chart will be drawn inside this DIV --></div>
+</div>
+<%- include('./components/graphs/bar_graph_1.ejs') -%>

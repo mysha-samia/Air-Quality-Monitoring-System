@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+  background-color: rgb(218, 233, 233);
+  color: #444;
+  /* display: flex; */
+  /* min-height: 100vh; */
+  /* flex-direction: row; */
+  margin: 0;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 500;
+}
+
+header {
+  display: flex;
+}
+/* header {
+  width: 400px;
+  height: auto;
+  background-color: white;
+  color: blue;
+  inline-size: auto;
+  margin: 100px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 5px 5px 25px 10px rgba(rgb(41, 15, 15), green, blue, alpha);
+} */
+
+main {
+  width: auto;
+  margin-top: 7rem;
+  display: flex;
+  flex: 1;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.media-scroller {
+  display: grid;
+}
+
+.scroller-warpper{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 8px 15px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  main {
+    margin-top: 4rem;
+  }
+  .bx-cloud-lightning::before {
+    content: 'Home';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-bar-chart-square::before {
+    content: 'Graph';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-data::before {
+    content: 'AQI';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-calendar::before {
+    content: 'Map';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-map::before {
+    content: 'Map';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .bx-sort-up::before {
+    content: 'Rank';
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .alter1 {
+    content: '';
+    visibility: hidden;
+    font-size: 1.5rem;
+    align-items: content;
+  }
+  .media-scroller {
+    display: none;
+  }
+  .scroller-warpper{
+    display: none;
+    height: 0;
+  }
+}
+
+.title3 {
+  position: relative;
+}
+
+.animate {
+  transition-duration: 0.3s;
+}
+
+.nav-font {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.card-wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 8px 15px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  /* background-color: gainsboro; */
+  border-radius: 10px;
+  /* margin-bottom: 15px; */
+  cursor: pointer;
+  align-items: flex-start;
+  animation-duration: 0.2s;
+}
+
+.card-img {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+
+main-left div, main-right div{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* background-color: rgba(36, 37, 38, var(--tw-bg-opacity)); */
+  /* background: white; */
+  cursor: pointer;
+  height: auto;
+  text-align: center;
+}
+
+main-left div:hover, main-right div:hover{
+  background-color: rgb(215, 242, 250);
+}
+
+main-left div:active, main-right div:active{
+  background-color: rgb(152, 233, 255);
+}
+
+main > main-center {
+  flex: 1;
+}
+
+main > main-left, main > main-right {
+  width: 0;
+  visibility: hidden;
+  display: none;
+
+}
+
+main > main-left {
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  /* .card-wrapper {
+    max-width: 50%;
+  } */
+  main > main-left,
+  main > main-right {
+    flex: 0 0 20vw;
+    visibility: visible;
+    display: initial;
+  }
+  
+}
+
+.tempinc {
+  position: absolute;
+  z-index: 50;
+  text-decoration: none;
+  text-align: justify;
+  padding: 4%;
+  top: 20px;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 5px 5px 25px 10px;
+}
+
+.weather_icon {
+  width: 9rem;
+  height: auto;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  right: 20px;
+  padding: 0%;
+}
+
+ .submitbtn{
+  background: rgb(14, 14, 14);
+  color: #ffffff;
+  padding: 8px 14px 6px 14px;
+  border: none;
+  margin: 0 auto;
+  /* width: auto; */
+  max-width: 450px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  transition: .1s ease-in;
+}
+
+.submitbtn:hover{
+    background: rgb(65, 65, 65);
+
+  }
+
+/* Aqi Card */
+  .aqi-card{
+    display: absolute;
+    border-radius: 10px;
+    /* background-color: rgb(255, 255, 255); */
+    color: rgb(7, 7, 7);
+    font-size: 1.1rem;
+}
+
+.aqi-card .aqi-flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;        
+    padding: 0.5rem;
+}
+
+.aqi-card .aqi-index{
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 20px;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.aqi-card table{
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: rgb(168, 168, 168);
+}
+
+.aqi-card table thead{
+    background-color: rgb(109, 109, 109);
+}
+
+.aqi-card table, th, td{
+    border: 2px solid rgb(151, 151, 151);
+    border-collapse: collapse;
+}
+
+@media (max-width: 600px){
+    .aqi-card .aqi-flexbox{
+        padding: 0.8rem;
+    }
+}
+
+main-left div {
+  visibility: hidden;
+}

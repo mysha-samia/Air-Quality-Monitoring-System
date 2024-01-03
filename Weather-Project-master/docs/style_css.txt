@@ -1,0 +1,68 @@
+
+class="w-full text-3xl py-2 px-3 xl:px-12 cursor-pointer text-center inline-block text-yellow-500 border-b-4 border-yellow-500">
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Exo", sans-serif;
+            background-color: rgb(218, 233, 233);
+            color: #444;
+            margin-top: 0px;
+        }
+
+        header {
+            position: sticky;
+            overflow: hidden;
+            flex-direction: column;
+            top: 0px;
+            width: 100%;
+            z-index: 1;
+            background-color: darkcyan;
+            transition: ease-in-out;
+            transition-duration: 0.3s;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding:0 0px;
+
+        }
+
+        header a {
+            overflow: hidden;
+            background: linear-gradient(203deg, rgb(0, 255, 238), rgb(0, 255, 123));
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: ease-in-out;
+            transition-duration: 0.3s;
+            margin-top:6px;
+            margin-bottom:6px;
+            margin-left: 2.5px;
+            margin-right: 2.5px;
+        }
+
+        header a:hover {
+            background-color: #ddd;
+            color: black;
+            top: 0px;
+        }
+
+        header a.active {
+            background-color: rgb(34, 29, 0);
+            color: white;
+        }
+
+        .container p, h2 {
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 50px;
+        }
+    </style>

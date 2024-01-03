@@ -1,0 +1,52 @@
+<style>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .media-scroller {
+    -ms-overflow-style: none;
+    /* display: grid; */
+    grid-auto-flow: column;
+    overflow-x: auto;
+    gap: 0.1rem;
+    overscroll-behavior-inline: contain;
+
+    box-sizing: content-box;
+  }
+  .media-scroller p{
+    padding: auto;
+    text-align: center;
+  }
+</style>
+<div class="scroller-warpper">
+  <div class="media-scroller w-full rounded-lg">
+    <div
+      class="h-12 text-center items-center rounded-lg bg-white dark:bg-dark-second hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt shadow "
+      onclick="bar()">
+      <p>Bar Chart</p>
+    </div>
+    <div
+      class="h-12 text-center items-center rounded-lg bg-white dark:bg-dark-second hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt shadow ">
+      <p>Box Chart</p>
+    </div>
+    <div
+      class="h-12 text-center items-center rounded-lg bg-white dark:bg-dark-second hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt shadow "
+      onclick="scatter()">
+      <p>Scatter Chart</p>
+    </div>
+    <div
+      class="h-12 text-center items-center rounded-lg bg-white dark:bg-dark-second hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt shadow "
+      onclick="line()">
+      <p>Line Chart</p>
+    </div>
+    <div
+      class="h-12 text-center items-center rounded-lg bg-white dark:bg-dark-second hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt shadow "
+      onclick="division()">
+      <p>Division Line Chart</p>
+    </div>
+    <div
+      class="h-12 text-center items-center rounded-lg bg-white dark:bg-dark-second hover:bg-gray-100 dark:hover:bg-dark-third dark:text-dark-txt shadow ">
+      <p>Pie Chart</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+
+
+<div class="card-wrapper ">
+    <div class="master-box bg-white dark:bg-dark-second shadow rounded-lg">
+        <!-- <div class="flex-container-block">
+            <div class="cardbox">
+                <div class="cardrow">
+                    <div class="flex-item">
+                        <div class="flex-view-block-form"> -->
+                            <div class="main-form">
+                                <h1 style="font-size: 1.5rem;">ADMIN LOGIN PANEL</h1>
+                                <form class="formbox" method="post" action="userdashboardAdmin">                               
+                                    <div class="form-item">
+                                        <div class="form-view-block">
+                                            <label class="myform-label">Email</label>
+                                            <input type="email" class="myform-input" name="adminEmail" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="form-view-block">
+                                            <label class="myform-label">Password</label>
+                                            <input type="password" class="myform-input" name="adminPassword" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <div class="form-view-block">
+                                            <div class="button-box">
+                                                <input type="submit" class="w-full myform-label block-button-custom text-center" value="Login">
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        <!-- </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    
+    <% if(typeof locals.notification != "undefined"){ %>
+        <% if(notification.status == true){ %>
+            <div class="callout">
+                <div class="callout-header"><%= notification.header %></div>
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+                <div class="callout-container">
+                  <p><%= notification.text %></p>
+                </div>
+                <div class="callout-close"><strong>Click To Close</strong></div>
+              </div>
+        <% } %> 
+    <% } %> 
+    
+</div>

@@ -1,0 +1,219 @@
+
+
+<div class="card-wrapper">
+    <div class="profile-card rounded-lg shadow">
+        <% if(typeof locals.userdetail != "undefined"){ %>
+            <% if(userdetail.status == true){ %>
+                <div class="profile-item-full">
+                    <p>Hello</p>
+                </div>
+                <div class="profile-item-left">
+                    <p>User Type</p>
+                </div>
+                <div class="profile-item-right">
+                    <p><%= userdetail.usertype %></p>
+                </div>
+                <div class="profile-item-left">
+                    <p>Name</p>
+                </div>
+                <div class="profile-item-right">
+                    <p><%= userdetail.name %></p>
+                </div>
+                <div class="profile-item-left">
+                    <p>Email</p>
+                </div>
+                <div class="profile-item-right">
+                    <p><%= userdetail.email %></p>
+                </div>                                    
+            <% } %>  
+        <% } %>     
+    </div>           
+</div>
+
+<div class="card-wrapper">
+    <div class="master-box bg-white dark:bg-dark-second shadow rounded-lg">
+        <div class="flex-container-block">
+            <div class="cardbox">
+                <div class="card-row">                     
+                    <!-- <div class="flex-item">                    
+                        <div class="flex-view-block">                        
+                                                          
+                        </div>    
+                    </div> -->
+    
+                    <div class="card-row">
+                        <div class="flex-item">                    
+                            <div class="flex-view-block-file">
+                                <form method="post" enctype="multipart/form-data" action="csvupload">
+                                    <div class="file-upload">                                        
+                                        <input type="file" name="csvfile" required>
+                                    </div>
+                                    <div class="button-box">
+                                        <button type="submit" class="myform-label block-button-custom"><p>Upload</p></button>
+                                    </div> 
+                                </form> 
+                            </div>    
+                        </div>
+                    </div>
+    
+                    <div class="card-row">
+    
+                        <div class="flex-item">
+                            <div class="flex-view-block">                        
+                                <div id="formbutton" class="button-box">
+                                    <button type="button" class="formbutton myform-label block-button-custom"><p>Click For Data Entry Set Form</p></button>
+                                </div>                                                                      
+                            </div>
+                        </div>
+    
+                        <div id="formdata" class="flex-item">                    
+                            <div class="flex-view-block-form">
+                                <div class="main-form ">
+                                    <h1 class="font-bold text-xl">Data Entry Set</h1>
+                                    <form class="formbox" method="post" action="userdashboard">
+    
+                                        <div class="form-item">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Enter Data of User:</label>
+                                                <select class="myform-input" name="usertype" required>
+                                                    <% for(let i in locals.formUsertype){ %>
+                                                        <option>
+                                                            <%= formUsertype[i] %>
+                                                        </option>
+                                                    <% } %>
+                                                </select>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Daily</label>
+                                                <input type="date" class="myform-input" name="Daily" required>
+                                            </div>    
+                                        </div>
+                            
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Location</label>
+                                                <input type="text" class="myform-input" name="Location" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Latitude</label>
+                                                <input type="number" class="myform-input" name="lat" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Longitude</label>
+                                                <input type="number" class="myform-input" name="lon" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Median</label>
+                                                <input type="number" class="myform-input" name="median" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Mean</label>
+                                                <input type="number" class="myform-input" name="mean" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Max</label>
+                                                <input type="number" class="myform-input" name="max" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item-50">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Sum</label>
+                                                <input type="number" class="myform-input" name="sum" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item">
+                                            <div class="form-view-block">
+                                                <label class="myform-label">Count</label>
+                                                <input type="number" class="myform-input" name="count" required>
+                                            </div>    
+                                        </div>
+    
+                                        <div class="form-item">
+                                            <div class="form-view-block">
+                                                <div class="button-box">
+                                                    <input type="submit" class="myform-label block-button-custom">
+                                                </div>
+                                            </div>    
+                                        </div>
+                            
+                                    </form>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <% if(typeof locals.uploadContent != "undefined"){ %>
+                        <div class="card-row">
+                            <div class="flex-item">
+                                <div class="flex-view-block">                                
+                                    <div class="table_container">
+                                        <h1 style="text-align: center;">TABLE INSERTED INTO DB</h1>
+                                            <table id="view-table">
+                                                <tr>
+                                                    <% for(let i = 0; i < Object.keys(uploadContent[0]).length; i++){ %>
+                                                        <th><%= Object.keys(uploadContent[0])[i] %></th>   
+                                                    <% } %>                        
+                                                </tr>
+                                                <% for(let i = 0; i < uploadContent.length; i++){ %>
+                                                    <tr>
+                                                        <% for(let j = 0; j < Object.values(uploadContent[i]).length; j++){ %>
+                                                            <td><p><%= Object.values(uploadContent[i])[j] %></p></td>
+                                                        <% } %>  
+                                                    </tr>
+                                                <% } %>
+                                            </table>
+                                        </div>
+                                    </div>                                
+                                </div>
+                            </div>
+                        <% } %> 
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <% if(typeof locals.notification != "undefined"){ %>
+        <% if(notification.status == true){ %>
+            <div class="callout">
+                <div class="callout-header"><%= notification.header %></div>
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+                <div class="callout-container">
+                  <p><%= notification.text %></p>
+                </div>
+                <div class="callout-close"><strong>Click To Close</strong></div>
+              </div>
+        <% } %> 
+    <% } %> 
+</div>
+
+
+<script>
+    $("#formdata").hide()
+    $("#formbutton").click(function(){
+        $("#formdata").slideToggle()
+    })
+</script>
